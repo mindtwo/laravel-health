@@ -2,6 +2,17 @@
 
 namespace Mindtwo\LaravelHealth\Checks;
 
-class DummyCheck
+use Spatie\Health\Checks\Check;
+use Spatie\Health\Checks\Result;
+
+class DummyCheck extends Check
 {
+    public function run(): Result
+    {
+        $result = Result::make()->meta([
+            'test' => 'success',
+        ]);
+
+        return $result->ok();
+    }
 }

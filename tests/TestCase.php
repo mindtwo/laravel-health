@@ -2,9 +2,8 @@
 
 namespace Mindtwo\LaravelHealth\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Mindtwo\LaravelHealth\LaravelHealthServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

@@ -4,7 +4,6 @@ namespace Mindtwo\LaravelHealth;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Mindtwo\LaravelHealth\Commands\LaravelHealthCommand;
 
 class LaravelHealthServiceProvider extends PackageServiceProvider
 {

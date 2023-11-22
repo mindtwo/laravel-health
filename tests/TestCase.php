@@ -9,6 +9,7 @@ use Orchestra\Testbench\TestCase as Orchestra;
 class TestCase extends Orchestra
 {
     protected $systemReport;
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -26,6 +27,7 @@ class TestCase extends Orchestra
     {
         //$this->config()->set('database.default', 'testing');
     }
+
     public function testSystemName(): void
     {
         $this->assertEquals('Laravel', $this->systemReport->getSystemName());
@@ -68,13 +70,14 @@ class TestCase extends Orchestra
 
     public function testDatabaseVersion(): void
     {
-        $this->assertEquals( config('database.connections.' . config('database.default') . '.version'), $this->systemReport->getDatabaseVersion());
+        $this->assertEquals(config('database.connections.'.config('database.default').'.version'), $this->systemReport->getDatabaseVersion());
     }
 
     public function testDependenciesName(): void
     {
         $this->assertEquals(config('dependencies_name', []), $this->systemReport->getDependenciesName());
     }
+
     public function testDependenciesVersion(): void
     {
         $this->assertEquals(config('dependencies_version', []), $this->systemReport->getDependenciesVersion());
@@ -84,6 +87,4 @@ class TestCase extends Orchestra
     {
         $this->assertEquals(now()->toIso8601String(), $this->systemReport->getAdditionalLastUpdate());
     }
-
-
 }

@@ -4,11 +4,11 @@ namespace Mindtwo\LaravelHealth\Checks;
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
-use Spatie\Health\Checks\Check;
+use Mindtwo\LaravelHealth\Interfaces\DummyInterface;
 use Spatie\Health\Checks\Result;
 use Throwable;
 
-class DummyCheck extends Check
+class DummyCheck implements DummyInterface
 {
     public function run(): Result
     {
@@ -96,9 +96,9 @@ class DummyCheck extends Check
      */
     public function getDatabaseVersion(): ?string
     {
+        // $error = 'The system is not healthy';
         try {
             $version = DB::select('SELECT version() AS version');
-
             return $version[0]->version;
         } catch (Throwable $error) {
             return null;

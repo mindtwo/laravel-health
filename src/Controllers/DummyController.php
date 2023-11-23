@@ -4,9 +4,8 @@ namespace Mindtwo\LaravelHealth\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
-use Mindtwo\LaravelHealth\Checks\DummyCheck;
 use Illuminate\Support\Facades\Config;
-
+use Mindtwo\LaravelHealth\Checks\DummyCheck;
 
 class DummyController extends Controller
 {
@@ -16,14 +15,12 @@ class DummyController extends Controller
 
         $ipWhitelist = Config::get('system-report.ip_whitelist');
         $clientIp = request()->ip();
-        if (!in_array($clientIp, $ipWhitelist)) {
+        if (! in_array($clientIp, $ipWhitelist)) {
 
             return response()->json(['error' => 'Forbidden.'], 403);
         }
         //dd($ipWhitelist);
         //dd(Config::get('system-report.ip_whitelist'));
-
-
 
         //$output = shell_exec('mysql -V');
 
@@ -34,5 +31,4 @@ class DummyController extends Controller
         return response()->json($systemReport->toArray());
 
     }
-
 }

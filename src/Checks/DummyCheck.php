@@ -99,6 +99,7 @@ class DummyCheck implements DummyInterface
         // $error = 'The system is not healthy';
         try {
             $version = DB::select('SELECT version() AS version');
+
             return $version[0]->version;
         } catch (Throwable $error) {
             return null;

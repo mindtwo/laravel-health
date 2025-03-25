@@ -61,6 +61,11 @@ interface DummyInterface
     public function getDependenciesInfos(): ?array;
 
     /**
+     * Get the dependencies version of the main system or frame (e.q. 4.1.0)
+     */
+    public function getDependenciesVersion(): string|array;
+
+    /**
      * Get the last update  of the main system or frame (e.q. 2023-10-24T18:00:00Z)
      */
     public function getAdditionalLastUpdate(): string;

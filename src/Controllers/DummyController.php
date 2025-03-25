@@ -13,18 +13,11 @@ class DummyController extends Controller
     {
         // If the ip is not in the whitelist, return 403
 
-        $ipWhitelist = Config::get('system-report.ip_whitelist');
+        $ipWhitelist = Config::get('health.ip_whitelist', ['127.0.0.1', '::1']);
         $clientIp = request()->ip();
         if (! in_array($clientIp, $ipWhitelist)) {
-
             return response()->json(['error' => 'Forbidden.'], 403);
         }
-        //dd($ipWhitelist);
-        //dd(Config::get('system-report.ip_whitelist'));
-
-        //$output = shell_exec('mysql -V');
-
-        // dd(DB::select('SELECT version()'));
 
         $systemReport = new DummyCheck();
 

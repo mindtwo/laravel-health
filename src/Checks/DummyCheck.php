@@ -119,7 +119,7 @@ class DummyCheck implements DummyInterface
     /**
      * Get the dependencies version of the main system or frame (e.q. 4.1.0)
      */
-    public function getDependenciesVersion(): string
+    public function getDependenciesVersion(): string|array
     {
         return config('dependencies_version', []);
     }

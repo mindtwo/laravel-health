@@ -19,7 +19,7 @@ class DummyController extends Controller
             return response()->json(['error' => 'Forbidden.'], 403);
         }
 
-        $systemReport = new DummyCheck();
+        $systemReport = new DummyCheck;
 
         return response()->json($systemReport->toArray());
 

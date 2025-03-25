@@ -41,22 +41,16 @@ interface DummyInterface
 
     /**
      * Get the database name of the main system or frame (e.q. MySQL)
-     *
-     * @return ?string
      */
     public function getDatabaseName(): ?string;
 
     /**
      * Get the database version of the main system or frame (e.q. 5.7)
-     *
-     * @return ?string
      */
     public function getDatabaseVersion(): ?string;
 
     /**
      * Get the dependencies name of the main system or frame (e.q. Nova)
-     *
-     * @return ?array
      */
     public function getDependenciesInfos(): ?array;
 
